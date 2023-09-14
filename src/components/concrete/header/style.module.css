@@ -1,0 +1,14 @@
+.headerBox{
+    display: flex;
+    height: 80px;
+    width: 100%;
+    background-color: var(--main-dark);
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.headerTitle{
+    color: var(--main-secondary);
+}

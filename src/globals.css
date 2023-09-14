@@ -15,20 +15,11 @@ input:focus {
 }
 
 :root {
-	--primary-scale-900: rgba(9, 46, 80, 1);
-	--primary-scale-600: rgba(16, 99, 175, 1);
-	--primary-scale-800: rgba(21, 65, 106, 1);
-	--primary-scale-700: rgba(28, 81, 130, 1);
-	--primary-scale-500: rgba(34, 134, 226, 1);
-	--primary-scale-300: rgba(114, 178, 237, 1);
-	--primary-scale-200: rgba(141, 199, 253, 1);
-	--primary-scale-100: rgba(190, 222, 252, 1);
-	--primary-scale-50: rgba(228, 242, 255, 1);
 
-	--branding-main: rgba(12, 113, 207, 1);
-	--branding-main-dark: rgba(27, 80, 129, 1);
-	--branding-error: rgba(207, 12, 82, 1);
-	--branding-tertiary: rgba(207, 12, 129, 1);
+	--main: #1E1E1E;
+	--main-dark: #0F0F0F;
+	--main-light: #3C3C3C;
+	--main-secondary: #E80000;
 	--branding-warning: rgba(207, 129, 12, 1);
 	--branding-success-scale500: rgba(12, 207, 125, 1);
 
@@ -101,7 +92,7 @@ h2,
 input,
 h1 {
 	font-family: var(--main-font);
-	color: var(--gray-scale-800);
+	color: var(--gallery);
 }
 
 p {

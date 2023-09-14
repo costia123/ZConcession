@@ -1,22 +1,20 @@
+import { strapi } from "redux/types";
 
 
 const initialState = {
     strapiPage: null,
     strapiLogo: null,
-    strapiImage: null
+    strapiImage: null,
+    cars: null
 };
  const reducer = (state = initialState, action) => {
     switch (action.type){
-       /*  case strapi.GET_STRAPI_PAGE:
+       case strapi.GET_CARS:
             return{
                 ...state, 
-                strapiPage: action.payload
+                cars: action.payload
             }
-        case strapi.GET_STRAPI_IMAGE:
-            return {
-                ...state,
-                strapiImage: action.payload
-            } */
+      
         default:
 			return state;
     }
