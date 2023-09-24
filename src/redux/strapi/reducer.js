@@ -11,7 +11,8 @@ const initialState = {
   CarouselIndexOfFirstCars: null,
   CarouselCurrentCars: null,
   cars: null,
-  cat: null
+  cat: null,
+  CurentCars: null,
 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -20,6 +21,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         cars: action.payload,
       };
+      case strapi.SET_SETCURRCARS:
+        return {
+          ...state,
+          CurentCars: action.payload,
+        };
       case strapi.GET_CAT:
         return {
           ...state,

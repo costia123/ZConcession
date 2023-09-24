@@ -1,0 +1,55 @@
+.mainBox {
+  width: 100%;
+  height: 80px;
+  background-color: var(--main-dark);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.logobox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  width: 60px;
+  height: 60px;
+}
+.Href {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+.Href:hover {
+  font-size: 19px;
+}
+@media only screen and (max-width: 660px) {
+  .mainBox {
+    width: 100%;
+    height: 180px;
+    background-color: var(--chakra-colors-secondaryBg);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 25px;
+  }
+  .Href {
+    color: white;
+  }
+  .Href:hover {
+    font-size: 15px;
+  }
+}

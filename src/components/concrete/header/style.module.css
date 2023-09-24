@@ -1,6 +1,6 @@
 .headerBox{
     display: flex;
-    height: 80px;
+    height: 120px;
     width: 100%;
     background-color: var(--main-dark);
     flex-direction: row;
@@ -10,5 +10,17 @@
     justify-content: space-evenly;
 }
 .headerTitle{
+    margin-left: 10px;
     color: var(--main-secondary);
+}
+.logoBox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.Logo{
+    width: 110px;
 }

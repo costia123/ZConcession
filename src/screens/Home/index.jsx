@@ -11,12 +11,14 @@ import {
 } from "redux/strapi/action";
 import Card from "components/abstract/card";
 import {
+  Alert,
   FormControl,
   InputLabel,
   MenuItem,
   Pagination,
   Select,
 } from "@mui/material";
+import Footer from "components/concrete/footer";
 
 function Home(props) {
   const [cat, setCat] = useState("default");
@@ -27,10 +29,10 @@ function Home(props) {
       dispatch(getCars());
       dispatch(getCategories());
     }
-    if (strapi.cars && !strapi.CarouselCurrentCars) {
+    if (strapi.CurentCars && !strapi.CarouselCurrentCars) {
       dispatch(
         setCarousel(
-          strapi.cars,
+          strapi.CurentCars,
           strapi.CarouselIndexOfLast,
           strapi.CarouselIndexOfFirstCars
         )
@@ -39,13 +41,12 @@ function Home(props) {
   }, [strapi]);
 
   const handleChange = (event, value) => {
-    console.log("here we are", value);
-    dispatch(setNewPage(value, strapi.cars, strapi.carsPerPage));
+    dispatch(setNewPage(value, strapi.CurentCars, strapi.carsPerPage));
   };
 
   const catChange = (event) => {
-    setCat(event.target.value)
-    if(event.target.value === "default"){
+    setCat(event.target.value);
+    if (event.target.value === "default") {
       dispatch(
         setCarousel(
           strapi.cars,
@@ -53,36 +54,43 @@ function Home(props) {
           strapi.CarouselIndexOfFirstCars
         )
       );
-    }else{
-      dispatch(setCarouselWithOption(
-        strapi.cars,
-        strapi.CarouselIndexOfLast,
-        strapi.CarouselIndexOfFirstCars,
-        event.target.value
-      ))
+    } else {
+      dispatch(
+        setCarouselWithOption(
+          strapi.cars,
+          strapi.CarouselIndexOfLast,
+          strapi.CarouselIndexOfFirstCars,
+          event.target.value
+        )
+      );
     }
-  }
+  };
 
   return (
     <>
       <Header />
       <div className={styles.mainBox}>
         <div className={styles.optionsBox}>
-          <select placeholder="Catégories"
-          value={cat}
-          onChange={catChange}
-          >
-            <option value={"default"}>Catégories</option>
-            {strapi.cat
-              ? strapi.cat.map((item, index) => {
-                  return (
-                    <option key={index} value={item.attributes.Type}>
-                      {item.attributes.Name}
-                    </option>
-                  );
-                })
-              : null}
-          </select>
+
+        <Alert variant="outlined" severity="warning">L'application est en cours de développement.</Alert>
+        </div>
+        <div className={styles.optionsBox}>
+          <div className="selectdiv">
+            <label>
+              <select placeholder="Catégories" value={cat} onChange={catChange}>
+                <option value={"default"}>Catégories</option>
+                {strapi.cat
+                  ? strapi.cat.map((item, index) => {
+                      return (
+                        <option key={index} value={item.attributes.Type}>
+                          {item.attributes.Name}
+                        </option>
+                      );
+                    })
+                  : null}
+              </select>
+            </label>
+          </div>
         </div>
         <div className={styles.cars}>
           {strapi.CarouselCurrentCars
@@ -121,12 +129,13 @@ function Home(props) {
                 onChange={handleChange}
                 variant="outlined"
                 color="primary"
-                size="large"
+              /*   size="large" */
               />
             </>
           ) : null}
         </div>
       </div>
+      <Footer />
     </>
   );
 }

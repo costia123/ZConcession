@@ -7,5 +7,6 @@ export const strapi = {
 	SET_CURRENT_PAGE: "set_current_page",
 	SET_PAGES: "set_pages",
 	SET_INDEX: "set_index",
-	GET_CAT: "get_cat"
+	GET_CAT: "get_cat",
+	SET_SETCURRCARS: "set_currcars"
 }

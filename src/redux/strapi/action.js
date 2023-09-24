@@ -8,6 +8,7 @@ export const getCars = () => (dispatch) => {
     dispatch(carouselSetPage(12, res.data.data));
     dispatch(carouselIndex(12, 1));
     dispatch(setCarousel(res.data.data, 0, 11));
+    dispatch(CurentCars(res.data.data));
     dispatch({
       type: strapi.GET_CARS,
       payload: res.data.data,
@@ -53,6 +54,7 @@ export const carouselCurrentPage = (page) => (dispatch) => {
 
 export const setCarousel =
   (cars, indexOfLastCars, indexOfFirstCars) => (dispatch) => {
+    console.log("carsss", cars)
     let carousel = cars.slice(indexOfFirstCars, indexOfLastCars);
     if (carousel.length > 0) {
       dispatch({
@@ -69,7 +71,12 @@ export const setNewPage = (page, cars, carsPerPage) => (dispatch) => {
     setCarousel(cars, page * carsPerPage, page * carsPerPage - carsPerPage)
   );
 };
-
+export const CurentCars = (cars) => dispatch => {
+  dispatch({
+    type: strapi.SET_SETCURRCARS,
+    payload: cars
+  })
+}
 export const setCarouselWithOption =
   (cars, indexOfLastCars, indexOfFirstCars, cat) => (dispatch) => {
     console.log(cars, indexOfLastCars, indexOfFirstCars, cat);
@@ -82,6 +89,7 @@ export const setCarouselWithOption =
     dispatch(carouselCurrentPage(1));
 
     const CarouselPage = Math.ceil(arr.length / 12);
+    dispatch(CurentCars(arr))
     dispatch({
       type: strapi.SET_PAGES,
       payload: CarouselPage,
