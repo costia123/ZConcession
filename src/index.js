@@ -4,7 +4,6 @@ import "./globals.css";
 import App from "./App";
 import { Provider } from "react-redux";
 import store from "redux/configstore";
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 ReactDOM.render(
 	<Provider store={store}>
@@ -12,4 +11,4 @@ ReactDOM.render(
 	</Provider>,
 	document.getElementById("root")
 );
-serviceWorkerRegistration.register();
+

@@ -13,7 +13,19 @@ input:focus {
 * {
 	box-sizing: border-box;
 }
-
+.css-1ysyrvn-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+    color: #d21919 !important;
+    border: 1px solid rgb(210 25 25 / 50%) !important;
+    background-color: rgb(210 25 25 / 12%) !important;
+}
+.css-1ysyrvn-MuiButtonBase-root-MuiPaginationItem-root{
+	border: 1px solid rgb(255 255 255 / 23%) !important;
+	color: rgb(255 252 252 / 87%) !important;
+}
+.MuiSelect-root{
+	color: rgb(255 255 255) !important;
+	border-color: rgba(255, 255, 255, 0.23) !important;
+}
 :root {
 
 	--main: #1E1E1E;
@@ -21,7 +33,7 @@ input:focus {
 	--main-light: #3C3C3C;
 	--main-secondary: #E80000;
 	--branding-warning: rgba(207, 129, 12, 1);
-	--branding-success-scale500: rgba(12, 207, 125, 1);
+	--branding-success: rgb(0, 255, 0);
 
 	--forest-green: rgba(32, 180, 38, 0.2);
 

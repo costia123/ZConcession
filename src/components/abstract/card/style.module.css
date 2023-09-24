@@ -1,30 +1,86 @@
 .cardBox {
-    display: flex;
-    background-color: var(--main-dark);
-    border: 2px var(--main-secondary) solid;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: flex-start;
-    align-items: center;
-    width: 350px;
-    height: 350px;
-    border-radius: 15px;
-    box-shadow: 0px 0px 11px 1px rgba(255, 255, 255, 0.2);
-    transition: 0.3s;
+  display: flex;
+  background-color: var(--main-dark);
+  border: 2px var(--main-secondary) solid;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  width: 350px;
+  height: 430px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 11px 1px rgba(255, 255, 255, 0.2);
+  transition: 0.3s;
 }
-.cardBox:hover{
-    -webkit-box-shadow: 0px 0px 16px 5px rgba(232, 0, 0, 0.3); 
-    box-shadow: 0px 0px 16px 5px rgba(232, 0, 0, 0.3);
-    scale: 0.9;
+.cardBox:hover {
+  -webkit-box-shadow: 0px 0px 16px 5px rgba(232, 0, 0, 0.3);
+  box-shadow: 0px 0px 16px 5px rgba(232, 0, 0, 0.3);
 }
+
 .img {
   width: 346px;
-  height: 200px;
+  height: 190px;
   object-fit: cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
 .cardText {
+  display: flex;
+  /*  margin-top: 15px; */
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-content: center;
+}
+.cardBoxBackground {
+  background-color: var(--main);
+  border-radius: 45px;
+}
+.cardBoxBackground1 {
   margin-top: 15px;
+  background-color: var(--main);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+}
+.MT {
+  margin-top: 10px;
+}
+.textAlignCenter {
+  text-align: center;
+}
+.priceContainCenter{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+.priceBox{
+  display: flex;
+  background-color: var(--main-secondary);
+  border-radius: 15px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 40px;
+  color: white;
+  font-weight: 700;
+  transition: 0.3s;
+  cursor:default;
+}
+.priceBox:hover{
+  background-color: transparent;
+  border: 2px var(--main-secondary) solid;
 }
