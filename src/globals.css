@@ -13,6 +13,11 @@ input:focus {
 * {
 	box-sizing: border-box;
 }
+.css-1b5ei7m.Mui-selected{
+	color: #d21919 !important;
+    border: 1px solid rgb(210 25 25 / 50%) !important;
+    background-color: rgb(210 25 25 / 12%) !important;
+}
 .css-1ysyrvn-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
     color: #d21919 !important;
     border: 1px solid rgb(210 25 25 / 50%) !important;
@@ -26,6 +31,10 @@ input:focus {
 .css-1y7coo4-MuiButtonBase-root-MuiPaginationItem-root {
 	border: 1px solid rgb(255 255 255 / 23%) !important;
 	color: rgb(255 252 252 / 87%) !important;
+}
+.css-1b5ei7m{
+	border: 1px solid rgb(255 255 255 / 23%) !important;
+	color: rgb(255 252 252 / 87%) !important;	
 }
 .css-1v2lvtn-MuiPaginationItem-root {
 	color: white !important;
@@ -311,12 +320,10 @@ h6 {
 	border: 1px solid var(--gray-scalewhite);
 }
 .selectdiv {
-    position: relative;
-    /*Don't really need this just for demo styling*/
-    
+	position: relative;
     float: left;
     min-width: 200px;
-    margin: 50px 33%;
+    margin: 50px;
   }
   
   /* IE11 hide native button (thanks Matt!) */

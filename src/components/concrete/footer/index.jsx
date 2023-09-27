@@ -7,11 +7,11 @@ function Footer() {
       <div className={styles.mainBox}>
         <div className={styles.logobox}>
             <img src={LogoNoBG} className={styles.logo} />
-          <h3>0 Concession</h3>
+{/*           <h3>0 Concession</h3> */}
         </div>
         <div>
           <a href="https://github.com/costia123" className={styles.Href}>
-          <p>{`Developed by Costia © 2023 - ${new Date().getFullYear()}`} </p>
+          <p>{`Developed by Oxy & Associate © 2023 - ${new Date().getFullYear()}`} </p>
           </a>
         </div>
       </div>

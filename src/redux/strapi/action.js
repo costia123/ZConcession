@@ -97,3 +97,25 @@ export const setCarouselWithOption =
 
     dispatch(setCarousel(arr, 12, 0));
   };
+
+  export const setCarouselWithOptionPlace =
+  (cars, indexOfLastCars, indexOfFirstCars, place) => (dispatch) => {
+    console.log(indexOfLastCars, indexOfFirstCars, place);
+    let arr = [];
+    cars.map((itm, index) => {
+      if (itm.attributes.Places == place) {
+        arr.push(itm);
+      }
+    });
+    dispatch(carouselCurrentPage(1));
+
+    const CarouselPage = Math.ceil(arr.length / 12);
+    dispatch(CurentCars(arr))
+    dispatch({
+      type: strapi.SET_PAGES,
+      payload: CarouselPage,
+    });
+
+    dispatch(setCarousel(arr, 12, 0));
+  };
+
