@@ -1,0 +1,37 @@
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 800px; /* Ajustez la largeur du carrousel selon vos besoins */
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .carousel-button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .carousel-content {
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .carousel-slide {
+    flex: 0 0 auto;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .carousel-slide.active {
+    opacity: 1;
+  }
+  
+  .carousel-slide img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }

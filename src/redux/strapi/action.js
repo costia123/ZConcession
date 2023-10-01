@@ -15,6 +15,28 @@ export const getCars = () => (dispatch) => {
     });
   });
 };
+export const getPerson = () => (dispatch) => {
+  console.log("first");
+  axios.get(`${api_link}employes?populate=*`).then((res) => {
+    console.log("contact", res);
+    dispatch({
+      type: strapi.GET_PERSON,
+      payload: res.data.data,
+    });
+  });
+};
+export const getPromotion = () => (dispatch) => {
+  console.log("first");
+  axios
+    .get(`${api_link}promotions?populate[0]=car&populate[1]=car.photo`)
+    .then((res) => {
+      console.log("promo", res);
+      dispatch({
+        type: strapi.GET_PROMOTION,
+        payload: res.data.data,
+      });
+    });
+};
 
 export const getCategories = () => (dispatch) => {
   axios.get(`${api_link}categories`).then((res) => {
@@ -54,7 +76,7 @@ export const carouselCurrentPage = (page) => (dispatch) => {
 
 export const setCarousel =
   (cars, indexOfLastCars, indexOfFirstCars) => (dispatch) => {
-    console.log("carsss", cars)
+    console.log("carsss", cars);
     let carousel = cars.slice(indexOfFirstCars, indexOfLastCars);
     if (carousel.length > 0) {
       dispatch({
@@ -71,12 +93,12 @@ export const setNewPage = (page, cars, carsPerPage) => (dispatch) => {
     setCarousel(cars, page * carsPerPage, page * carsPerPage - carsPerPage)
   );
 };
-export const CurentCars = (cars) => dispatch => {
+export const CurentCars = (cars) => (dispatch) => {
   dispatch({
     type: strapi.SET_SETCURRCARS,
-    payload: cars
-  })
-}
+    payload: cars,
+  });
+};
 export const setCarouselWithOption =
   (cars, indexOfLastCars, indexOfFirstCars, cat) => (dispatch) => {
     console.log(cars, indexOfLastCars, indexOfFirstCars, cat);
@@ -89,7 +111,7 @@ export const setCarouselWithOption =
     dispatch(carouselCurrentPage(1));
 
     const CarouselPage = Math.ceil(arr.length / 12);
-    dispatch(CurentCars(arr))
+    dispatch(CurentCars(arr));
     dispatch({
       type: strapi.SET_PAGES,
       payload: CarouselPage,
@@ -98,7 +120,7 @@ export const setCarouselWithOption =
     dispatch(setCarousel(arr, 12, 0));
   };
 
-  export const setCarouselWithOptionPlace =
+export const setCarouselWithOptionPlace =
   (cars, indexOfLastCars, indexOfFirstCars, place) => (dispatch) => {
     console.log(indexOfLastCars, indexOfFirstCars, place);
     let arr = [];
@@ -110,7 +132,7 @@ export const setCarouselWithOption =
     dispatch(carouselCurrentPage(1));
 
     const CarouselPage = Math.ceil(arr.length / 12);
-    dispatch(CurentCars(arr))
+    dispatch(CurentCars(arr));
     dispatch({
       type: strapi.SET_PAGES,
       payload: CarouselPage,
@@ -118,4 +140,44 @@ export const setCarouselWithOption =
 
     dispatch(setCarousel(arr, 12, 0));
   };
+export const setCarouselWithFilters =
+  (cars, indexOfLastCars, indexOfFirstCars, filters) => (dispatch) => {
+    console.log(indexOfLastCars, indexOfFirstCars, filters);
 
+    // Filtrez les éléments en fonction des critères sélectionnés
+    let filteredCars = cars.filter((itm) => {
+      const {
+        Places,
+        Roues,
+        Type,
+        categorie,
+        decapotable,
+        hydraulique,
+      } = itm.attributes;
+
+      if (
+        (filters.Places === "default" || Places === filters.Places) &&
+        (filters.Roues === "default" || Roues === filters.Roues) &&
+        (filters.Type === "default" || Type === filters.Type) &&
+        (filters.categorie === "default" || categorie.data.attributes.Type === filters.categorie) &&
+        (filters.decapotable === false || decapotable === filters.decapotable) &&
+        (filters.hydraulique === false || hydraulique === filters.hydraulique)
+      ) {
+        console.log("true")
+        return true;
+      }
+
+      return false;
+    });
+    console.log("Cfilter", filteredCars)
+    dispatch(carouselCurrentPage(1));
+
+    const CarouselPage = Math.ceil(filteredCars.length / 12);
+    dispatch(CurentCars(filteredCars));
+    dispatch({
+      type: strapi.SET_PAGES,
+      payload: CarouselPage,
+    });
+
+    dispatch(setCarousel(filteredCars, 12, 0));
+  };

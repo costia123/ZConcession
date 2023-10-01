@@ -377,3 +377,16 @@ h6 {
   a{
 	text-decoration: none;
   }
+ 
+  @media only screen and (max-width: 660px) {
+	.selectdiv {
+		position: relative;
+		float: left;
+		min-width: 200px;
+		margin: 15px;
+	}
+  
+  }
+  .carousel-slider {
+	height: 500px !important;
+  }

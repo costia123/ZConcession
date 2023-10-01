@@ -13,6 +13,8 @@ const initialState = {
   cars: null,
   cat: null,
   CurentCars: null,
+  contact: null,
+  promotion: null
 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -20,6 +22,16 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         cars: action.payload,
+      };
+      case strapi.GET_PROMOTION:
+      return {
+        ...state,
+        promotion: action.payload,
+      };
+      case strapi.GET_PERSON:
+      return {
+        ...state,
+        contact: action.payload,
       };
       case strapi.SET_SETCURRCARS:
         return {

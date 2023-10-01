@@ -1,0 +1,37 @@
+.MuiOutlinedInput-root{
+	color: white !important;
+  }
+
+.MuiInputBase-input-root {
+    color: white !important;
+}
+.MuiOutlinedInput-notchedOutline{
+    color: white !important;
+    border-color: rgb(255 255 255 / 60%)!important;
+}
+.MuiOutlinedInput-notchedOutline.Mui-focused{
+    color: white !important;
+    border-color: rgb(255, 255, 255)!important;
+}
+.Mui-checked{
+    color: var(--main-secondary) !important; 
+}
+.MuiCheckbox-root:hover{
+    color: var(--main-secondary) !important; 
+    background-color: #e8000007 !important;
+}
+.formLabelRoot{
+    color: white !important;
+}
+.MuiInputLabel-root{
+color: white !important;
+}
+.MuiInputLabel-root.Mui-focused{
+    color: var(--main-secondary) !important; 
+}
+.MuiSelect-iconOutlined{
+    color: rgb(255 255 255 / 60%)!important;
+}
+.MuiSelect-iconOpen{
+    color: white !important;
+}

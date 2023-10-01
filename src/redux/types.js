@@ -8,5 +8,7 @@ export const strapi = {
 	SET_PAGES: "set_pages",
 	SET_INDEX: "set_index",
 	GET_CAT: "get_cat",
-	SET_SETCURRCARS: "set_currcars"
+	SET_SETCURRCARS: "set_currcars", 
+	GET_PERSON: "get_person",
+	GET_PROMOTION: "get_promotion"
 }
