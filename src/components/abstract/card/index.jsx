@@ -56,12 +56,16 @@ function Card(props) {
           </div>
 
           <div className={styles.priceContainCenter}>
-            {pricePromo ? (
-              <div className={styles.priceBox}> <span className={styles.OldPrice}>${price}</span> <span>${pricePromo}</span></div>
-            ) : (
-              <div className={styles.priceBox}> ${price}</div>
-            )}
+          {categorie.attributes.Promotion > 0 ? (
+             <div className={styles.priceBox}> <span className={styles.OldPrice}>${price}</span> <span>${price - categorie.attributes.Promotion}</span></div>
+          ): pricePromo ? (
+            <div className={styles.priceBox}> <span className={styles.OldPrice}>${price}</span> <span>${pricePromo}</span></div>
+          ) : (
+            <div className={styles.priceBox}> ${price}</div>
+          )}
+           
           </div>
+          
         </div>
       </div>
     </>

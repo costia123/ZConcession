@@ -339,7 +339,7 @@ function Home(props) {
                         weight={item.attributes.Poids}
                         type={item.attributes.Type}
                         categorie={
-                          item.attributes.categorie.data.attributes.Name
+                          item.attributes.categorie.data
                         }
                       />
                     </div>
@@ -369,7 +369,7 @@ function Home(props) {
                           weight={item.attributes.Poids}
                           type={item.attributes.Type}
                           categorie={
-                            item.attributes.categorie.data.attributes.Name
+                            item.attributes.categorie.data
                           }
                         />
                       </div>

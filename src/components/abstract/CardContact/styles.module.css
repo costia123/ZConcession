@@ -63,11 +63,11 @@
       flex-wrap: nowrap;
       align-content: center;
       justify-content: space-around;
-      background-color: var(--chakra-colors-tertiaryBg);
+      background-color: var(--main-dark);
       width: 350px;
       height: 150px;
       padding: 10px;
-      box-shadow: var(--chakra-shadows-none);
+      box-shadow: var(--main-secondary);
       border-radius: 5px;
       margin-left: 0px;
       margin-top: 50px;
